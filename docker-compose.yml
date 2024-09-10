@@ -1,4 +1,4 @@
-version: '25082024'
+version: '3' # esta es la version de la api
 
 services:
   mysql:
@@ -7,7 +7,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-    # - ./mysql:/var/lib/mysql
       - ./objects:/objects
       - ./structure:/structure
       - ./backup:/backup

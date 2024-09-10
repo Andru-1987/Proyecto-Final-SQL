@@ -31,8 +31,8 @@ up:
 
 	@echo "Create the import and run the script"
 	docker exec $(SERVICE_NAME) mysql -u $(USER) -p$(PASSWORD) -e "CREATE DATABASE IF NOT EXISTS $(DATABASE);"
-	docker exec $(SERVICE_NAME) mysql -u $(USER) -p$(PASSWORD) -e "USE $(DATABASE); source $(DATABASE_CREATION)"
-	docker exec $(SERVICE_NAME) mysql -u $(USER) -p$(PASSWORD) --local-infile=1 -e "USE $(DATABASE); source $(DATABASE_POPULATION)"
+	docker exec $(SERVICE_NAME) mysql -u $(USER) -p$(PASSWORD) -e "source $(DATABASE_CREATION)"
+	docker exec $(SERVICE_NAME) mysql -u $(USER) -p$(PASSWORD) --local-infile=1 -e "source $(DATABASE_POPULATION)"
 
 objects:
 	@echo "Create objects in database"
